@@ -1,5 +1,5 @@
 import express from "express";
-import { registerUser, verification, loginUser, logoutUser, forgotPassword } from "../controllers/userController.js";
+import { registerUser, verification, loginUser, logoutUser, forgotPassword, verifyOTP } from "../controllers/userController.js";
 import { isAuthenticated } from "../middleware/isAuthenticated.js";
 // import { verification } from "../controllers/userController.js";
 // import { loginUser } from "../controllers/userController.js";
@@ -11,4 +11,5 @@ router.post('/verify-email', verification)
 router.post('/login', loginUser)
 router.post('/logout', isAuthenticated, logoutUser)
 router.post('/forgot-password', forgotPassword)
+router.post('/verify-otp', verifyOTP)
 export default router;
